@@ -1,0 +1,391 @@
+
+@import url("https://fonts.googleapis.com/css2?family=League+Spartan:wght@400;500;600;700;800;900&display=swap");
+
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html,
+body {
+  height: 100%;
+  min-height: 100vh;
+}
+
+body {
+  display: grid;
+  place-items: center;
+  font-family: "League Spartan", system-ui, sans-serif;
+  font-size: 1.1rem;
+  line-height: 1.2;
+  background-color: #212121;
+  color: #ddd;
+}
+
+ul {
+  list-style: none;
+}
+
+.main {
+  max-width: 75rem;
+  padding: 3em 1.5em;
+}
+
+.main__heading {
+  font-weight: 600;
+  font-size: 2.25em;
+  margin-bottom: 0.75em;
+  text-align: center;
+  color: #eceff1;
+}
+
+.cards {
+  position: relative;
+}
+
+.cards__inner {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2.5em;
+}
+
+.card {
+  --flow-space: 0.5em;
+  --hsl: var(--hue), var(--saturation), var(--lightness);
+  flex: 1 1 14rem;
+  padding: 1.5em 2em;
+  display: grid;
+  grid-template-rows: auto auto auto 1fr;
+  align-items: start;
+  gap: 1.25em;
+  color: #eceff1;
+  background-color: #2b2b2b;
+  border: 1px solid #eceff133;
+  border-radius: 15px;
+}
+
+.card:nth-child(1) {
+  --hue: 165;
+  --saturation: 82.26%;
+  --lightness: 51.37%;
+}
+
+.card:nth-child(2) {
+  --hue: 291.34;
+  --saturation: 95.9%;
+  --lightness: 61.76%;
+}
+
+.card:nth-child(3) {
+  --hue: 338.69;
+  --saturation: 100%;
+  --lightness: 48.04%;
+}
+
+.card__bullets {
+  line-height: 1.4;
+}
+
+.card__bullets li::before {
+  display: inline-block;
+  content: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 512 512' width='16' title='check' fill='%23dddddd'%3E%3Cpath d='M173.898 439.404l-166.4-166.4c-9.997-9.997-9.997-26.206 0-36.204l36.203-36.204c9.997-9.998 26.207-9.998 36.204 0L192 312.69 432.095 72.596c9.997-9.997 26.207-9.997 36.204 0l36.203 36.204c9.997 9.997 9.997 26.206 0 36.204l-294.4 294.401c-9.998 9.997-26.207 9.997-36.204-.001z' /%3E%3C/svg%3E");
+  transform: translatey(0.25ch);
+  margin-right: 1ch;
+}
+
+.card__heading {
+  font-size: 1.05em;
+  font-weight: 600;
+}
+
+.card__price {
+  font-size: 1.75em;
+  font-weight: 700;
+}
+
+.flow > * + * {
+  margin-top: var(--flow-space, 1.25em);
+}
+
+.cta {
+  display: block;
+  align-self: end;
+  margin: 1em 0 0.5em 0;
+  text-align: center;
+  text-decoration: none;
+  color: #fff;
+  background-color: #0d0d0d;
+  padding: 0.7em;
+  border-radius: 10px;
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+.overlay {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  user-select: none;
+  opacity: var(--opacity, 0);
+  -webkit-mask: radial-gradient(
+    25rem 25rem at var(--x) var(--y),
+    #000 1%,
+    transparent 50%
+  );
+  mask: radial-gradient(
+    25rem 25rem at var(--x) var(--y),
+    #000 1%,
+    transparent 50%
+  );
+  transition: 400ms mask ease;
+  will-change: mask;
+}
+
+.overlay .card {
+  background-color: hsla(var(--hsl), 0.15);
+  border-color: hsla(var(--hsl), 1);
+  box-shadow: 0 0 0 1px inset hsl(var(--hsl));
+}
+
+.overlay .cta {
+  display: block;
+  grid-row: -1;
+  width: 100%;
+  background-color: hsl(var(--hsl));
+  box-shadow: 0 0 0 1px hsl(var(--hsl));
+}
+
+:not(.overlay) > .card {
+  transition: 400ms background ease;
+  will-change: background;
+}
+
+:not(.overlay) > .card:hover {
+  --lightness: 95%;
+  background: hsla(var(--hsl), 0.1);
+}
+
+/* Styles pour les liens */
+a {
+    color: inherit;
+    text-decoration: inherit;
+}
+
+/* Styles pour le corps de la page */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Open Sans', sans-serif;
+}
+
+/* Styles pour la sélection de texte */
+::selection {
+    background-color: #f7ca18;
+    color: #1b1b1b;
+}
+
+/* Styles pour la barre de navigation en bas de la page */
+nav {
+    width: 100%;
+    background-color: #0b0b0b;
+    position: fixed;
+    bottom: 0;
+    height: 100px;
+    overflow: hidden;
+}
+
+/* Styles pour la liste non ordonnée dans la barre de navigation */
+nav ul {
+    position: absolute;
+    top: 0;
+    left: 0;
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    width: 140vw;
+}
+
+/* Styles pour les éléments de la liste dans la barre de navigation */
+nav li {
+    margin: 0;
+    display: inline-block;
+    height: 98px;
+    margin-bottom: 2px;
+    line-height: 100px;
+    width: 20vw;
+    text-align: center;
+    color: #555;
+    transition: background-color 0.5s 0.2s ease, color 0.3s ease;
+    cursor: pointer;
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    font-weight: 800;
+    transform: translateY(100%);
+}
+
+/* Styles pour les éléments actifs dans la barre de navigation */
+nav li.active {
+    background-color: #151515;
+    color: #efefef;
+}
+
+/* Styles pour la ligne sous les éléments actifs dans la barre de navigation */
+nav li.active::after {
+    content: "";
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background-color: #f7ca18;
+}
+
+/* Styles pour l'animation d'apparition des éléments de la barre de navigation */
+nav li:nth-child(1) {
+    animation: pop 0.5s 0.15s 1 forwards;
+}
+nav li:nth-child(2) {
+    animation: pop 0.5s 0.3s 1 forwards;
+}
+nav li:nth-child(3) {
+    animation: pop 0.5s 0.45s 1 forwards;
+}
+nav li:nth-child(4) {
+    animation: pop 0.5s 0.6s 1 forwards;
+}
+nav li:nth-child(5) {
+    animation: pop 0.5s 0.75s 1 forwards;
+}
+nav li:nth-child(6) {
+    animation: pop 0.5s 0.9s 1 forwards;
+}
+nav li:nth-child(7) {
+    animation: pop 0.5s 1.05s 1 forwards;
+}
+
+/* Styles pour la couleur au survol des éléments de la barre de navigation */
+nav li:hover {
+    color: #ececec;
+}
+
+/* Styles pour l'élément actif au clic dans la barre de navigation */
+nav li:active {
+    background-color: #222;
+}
+
+/* Styles pour l'animation de la ligne de défilement dans la barre de navigation */
+nav li:nth-child(1):hover ~ .slide {
+    left: 0;
+}
+nav li:nth-child(2):hover ~ .slide {
+    left: 20vw;
+}
+nav li:nth-child(3):hover ~ .slide {
+    left: 40vw;
+}
+nav li:nth-child(4):hover ~ .slide {
+    left: 60vw;
+}
+nav li:nth-child(5):hover ~ .slide {
+    left: 80vw;
+}
+nav li:nth-child(6):hover ~ .slide {
+    left: 100vw;
+}
+nav li:nth-child(7):hover ~ .slide {
+    left: 120vw;
+}
+nav li.slide {
+    position: absolute;
+    left: -20vw;
+    top: 0;
+    background-color: #fff;
+    z-index: -1;
+    height: 2px;
+    margin-top: 98px;
+    transition: left 0.3s ease;
+    transform: translateY(0);
+}
+
+section {
+    background-color: #1b1b1b;
+    height: 100vh;
+    display: flex;
+}
+
+section .title {
+    max-width: 60%;
+    width: 100%;
+    align-self: center;
+    transform: translateY(-50px);
+    margin: 0 auto;
+    overflow: hidden;
+    padding-bottom: 10px;
+}
+
+section .title span {
+    display: inline-block;
+    font-size: 5vw;
+    color: #efefef;
+    width: 100%;
+    text-transform: uppercase;
+    transform: translateX(-100%);
+    animation: byBottom 1s ease both;
+    font-weight: 600;
+    letter-spacing: 0.25vw;
+}
+
+section .title span:last-child {
+    font-size: 1rem;
+    animation: byBottom 1s 0.25s ease both;
+}
+
+section .title span a {
+    position: relative;
+    display: inline-block;
+    margin-left: 0.5rem;
+    text-decoration: none;
+    color: #f7ca18;
+}
+
+section .title span a::after {
+    content: "";
+    height: 2px;
+    background-color: #f7ca18;
+    position: absolute;
+    bottom: -10px;
+    left: 0;
+    width: 0;
+    animation: linkAfter 0.5s 1s ease both;
+}
+
+@keyframes pop {
+    0% {
+        transform: translateY(100%);
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
+
+@keyframes byBottom {
+    0% {
+        transform: translateY(150%);
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
+
+@keyframes linkAfter {
+    0% {
+        width: 0;
+    }
+    100% {
+        width: 30px;
+    }
+}

@@ -1,0 +1,222 @@
+/* Pour les images dans les colonnes */
+.col-md-6 img {
+    width: 100%;
+    height: auto;
+    margin-bottom: 10px;
+}
+
+/* Pour les lignes (divisions de 2 images) */
+.row {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+/* Ajustement pour les écrans plus petits */
+@media (max-width: 767px) {
+    .col-md-6 {
+        width: 100%;
+    }
+}
+
+
+/* Styles pour le corps de la page */
+body {
+    margin: 0; /* Supprime les marges par défaut */
+    padding: 0; /* Supprime les rembourrages par défaut */
+    padding-top: 40px; /* Ajoute un espace de 40 pixels en haut de la page */
+    background-color: #808080; /* Définit la couleur d'arrière-plan */
+}
+
+/* Styles pour toutes les images de la page */
+img {
+    width: 100; /* Largeur de l'image */
+    height: auto; /* Hauteur automatique pour conserver les proportions */
+}
+
+/* Styles pour les liens dans l'élément .navbar-header */
+.navbar-header a {
+    font-family: 'Cormorant Garamond', serif; /* Police de caractères */
+    font-weight: 900; /* Poids de la police */
+    font-size: 30px; /* Taille de la police */
+    letter-spacing: 2px; /* Espacement des lettres */
+}
+
+/* Styles pour les liens dans les listes à l'intérieur de .collapse */
+.collapse ul li a {
+    font-family: 'Work Sans', sans-serif; /* Police de caractères */
+    font-weight: 900; /* Poids de la police */
+}
+
+/* Styles pour l'élément .jumbotron */
+.jumbotron {
+    font-family: 'Libre Franklin', sans-serif; /* Police de caractères */
+}
+
+/* Styles pour l'élément #main-container */
+#main-container {
+    width: 90%; /* Largeur de 90% de la largeur du conteneur parent */
+    overflow: hidden; /* Cache le contenu débordant */
+    background-color: rgba(255, 255, 255, .5); /* Fond semi-transparent */
+    margin: 0 auto; /* Centre horizontalement l'élément */
+    border-left: 2px solid #fff; /* Bordure de 2 pixels à gauche */
+    border-right: 2px solid #fff; /* Bordure de 2 pixels à droite */
+}
+
+
+#main-container #container {
+    width: 90%;
+    margin: 0 auto;
+    background-color: #fff;
+    padding-bottom: 5px;
+}
+
+#main-container #container .landing {
+    margin: 0 auto;
+    width: 100%;
+    height: 500px;
+    background: rgba(255, 255, 255, .5) url("https://images.pexels.com/photos/251225/pexels-photo-251225.jpeg?w=940&h=650&auto=compress&cs=tinysrgb") no-repeat 100%;
+    background-size: 100%;
+    text-align: center;
+    border-bottom: 2px solid #fff;
+}
+
+#main-container #container .landing .welcome {
+    margin: 0 auto;
+    width: 100%;
+    background-color: rgba(255, 255, 255, .2);
+    position: relative;
+    top: 38%;
+    font-family: 'Work Sans', sans-serif;
+}
+
+#main-container #container .landing .welcome h1 {
+    margin: auto auto;
+    padding: 0;
+    font-size: 80px;
+    color: #cce;
+    text-shadow: 2px 2px 2px rgba(0, 0, 36, .7);
+    text-align: center;
+}
+
+#main-container #container .portfolio {
+    margin: 0 auto;
+    padding: 0;
+    width: 90%;
+    background-color: rgba(255, 255, 255, .5);
+    height: auto;
+}
+
+#container .portfolio h3 {
+    margin: 0 auto 20px;
+    text-align: center;
+    border-bottom: 4px groove darkgray;
+    width: 50%;
+}
+
+#container .portfolio img {
+    margin: 2% auto;
+}
+
+#container #paneles {
+    width: 95%;
+    margin: 5% auto 0;
+    font-family: 'Libre Franklin', sans-serif;
+}
+
+#container #paneles .social-nav {
+    display: inline;
+}
+
+#container #paneles .adress {
+    width: 50%;
+    background-color: rgba(255, 255, 255, .5);
+    border-radius: 5px;
+}
+
+#container #paneles .social {
+    width: 100%;
+    height: 60px;
+    background-color: lightblue;
+    margin: 0 50%;
+}
+
+#container #paneles h1 {
+    text-align: left;
+    display: inline;
+    clear: right;
+    margin-left: 10%;
+    margin-right: 10%;
+}
+
+#container #paneles .contact .media {
+    width: 200px;
+    background-color: lightblue;
+}
+
+.fa {
+    padding: 10px;
+    font-size: 30px;
+    width: 50px;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 50%;
+    margin-left: 5%;
+}
+
+.fa-facebook {
+    background: #3B5998;
+    color: white;
+}
+
+.fa-twitter {
+    background: #55ACEE;
+}
+
+.fa-github {
+    background: #fff;
+}
+
+/* Styles pour le conteneur */
+.content {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+/* Styles pour le bloc de texte */
+.text {
+    width: 60%;
+    padding: 20px;
+    font-size: 23px;
+}
+
+/* Styles pour l'image */
+.image {
+    max-width: 50%;
+    height: auto;
+}
+
+/* Classe CSS pour réduire davantage la largeur de l'image */
+.small-image {
+    max-width: 60%;
+}
+
+/* Réduire la largeur de l'image pour les écrans plus petits */
+@media screen and (max-width: 768px) {
+    .content {
+        flex-direction: column;
+    }
+    .text, .image {
+        width: 100%;
+    }
+    .image {
+        max-width: 100%;
+    }
+}
+
+/* Ajouter un peu d'espace en bas */
+.container {
+    margin-bottom: 20px;
+}

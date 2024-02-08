@@ -1,0 +1,445 @@
+
+
+.presentation {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 20px; /* Espace supérieur pour séparer de la section de compétences */
+}
+
+.presentation-image {
+  width: 15%; /* Largeur de l'image à gauche */
+  max-width: 100%; /* Assurez-vous qu'elle ne dépasse pas de la div parente */
+  border-radius: 40%; /* Pour arrondir l'image */
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); /* Ombre légère pour l'image */
+  margin-left: 15%;
+}
+
+.presentation-paragraph {
+  width: 50%; /* Largeur du paragraphe à droite */
+  padding: 20px; /* Espace intérieur pour le paragraphe */
+  background-color: #424438; /* couleur Fond pour le paragraphe avec la bordure */
+  border-radius: 10px; /* Coins arrondis pour le paragraphe */
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); /* Ombre légère pour le paragraphe */
+  font-size: 22px; /* Taille de police du paragraphe */
+  line-height: 1.5; /* Espacement des lignes pour une meilleure lisibilité */
+  margin-left: 10%; /* Décalage vers la gauche */
+}
+
+
+h1 {
+  color: #f7ca18;
+}
+
+/* Styles pour les liens */
+a {
+  color: white;
+  text-decoration: none;
+}
+
+/* Styles pour le corps de la page */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Open Sans', sans-serif;
+  background-color: black; /* Fond noir pour le corps de la page */
+  color: white; /* Texte blanc pour le corps de la page */
+}
+
+/* Styles pour la sélection de texte */
+::selection {
+  background-color: #f7ca18;
+  color: black; /* Texte noir pour la sélection */
+}
+
+/* Styles pour la barre de navigation en bas de la page */
+nav {
+  width: 100%;
+  background-color: #0b0b0b;
+  position: fixed;
+  bottom: 0;
+  height: 100px;
+  overflow: hidden;
+}
+
+/* Styles pour la liste non ordonnée dans la barre de navigation */
+nav ul {
+  position: absolute;
+  top: 0;
+  left: 0;
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  width: 140vw;
+}
+
+/* Styles pour les éléments de la liste dans la barre de navigation */
+nav li {
+  margin: 0;
+  display: inline-block;
+  height: 98px;
+  margin-bottom: 2px;
+  line-height: 100px;
+  width: 20vw;
+  text-align: center;
+  color: #555;
+  transition: background-color 0.5s 0.2s ease, color 0.3s ease;
+  cursor: pointer;
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 4px;
+  font-weight: 800;
+  transform: translateY(100%);
+}
+
+/* Styles pour les éléments actifs dans la barre de navigation */
+nav li.active {
+
+  color: #efefef;
+}
+
+/* Styles pour la ligne sous les éléments actifs dans la barre de navigation */
+nav li.active::after {
+  content: "";
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 100%;
+  height: 2px;
+
+}
+
+/* Styles pour l'animation d'apparition des éléments de la barre de navigation */
+nav li:nth-child(1) { animation: pop 0.5s 0.15s 1 forwards; }
+nav li:nth-child(2) { animation: pop 0.5s 0.3s 1 forwards; }
+nav li:nth-child(3) { animation: pop 0.5s 0.45s 1 forwards; }
+nav li:nth-child(4) { animation: pop 0.5s 0.6s 1 forwards; }
+nav li:nth-child(5) { animation: pop 0.5s 0.75s 1 forwards; }
+nav li:nth-child(6) { animation: pop 0.5s 0.9s 1 forwards; }
+nav li:nth-child(7) { animation: pop 0.5s 1.05s 1 forwards; }
+
+/* Styles pour la couleur au survol des éléments de la barre de navigation */
+nav li:hover {
+  color: #ececec;
+}
+
+/* Styles pour l'élément actif au clic dans la barre de navigation */
+nav li:active {
+  background-color: #222;
+}
+
+/* Styles pour l'animation de la ligne de défilement dans la barre de navigation */
+nav li:nth-child(1):hover ~ .slide { left: 0; }
+nav li:nth-child(2):hover ~ .slide { left: 20vw; }
+nav li:nth-child(3):hover ~ .slide { left: 40vw; }
+nav li:nth-child(4):hover ~ .slide { left: 60vw; }
+nav li:nth-child(5):hover ~ .slide { left: 80vw; }
+nav li:nth-child(6):hover ~ .slide { left: 100vw; }
+nav li:nth-child(7):hover ~ .slide { left: 120vw; }
+
+/* Styles pour la ligne de défilement dans la barre de navigation */
+nav li.slide {
+  position: absolute;
+  left: -20vw;
+  top: 0;
+  background-color: #fff;
+  z-index: -1;
+  height: 2px;
+  margin-top: 98px;
+  transition: left 0.3s ease;
+  transform: translateY(0);
+}
+
+/* Styles pour la section des compétences */
+section {
+  background-color: #1b1b1b; /* Couleur de fond de la section */
+  height: 100vh; /* Hauteur de la section égale à la hauteur de la fenêtre */
+  display: flex;
+  color: white; /* Texte blanc pour la section des compétences */
+}
+
+/* Styles pour le titre de la section des compétences */
+section .title {
+  max-width: 60%;
+  width: 100%;
+  align-self: center;
+  transform: translateY(-50px); /* Décalage vers le haut du titre */
+  margin: 0 auto;
+  overflow: hidden; /* Effet de transition overflow pour le défilement du texte */
+  padding-bottom: 10px;
+}
+
+/* Styles pour l'animation de texte dans le titre */
+section .title span {
+  display: inline-block;
+  font-size: 5vw;
+  color: #efefef;
+  width: 100%;
+  text-transform: uppercase;
+  transform: translateX(-100%); /* Texte initiallement caché à gauche */
+  animation: byBottom 1s ease both; /* Animation pour faire glisser le texte depuis le bas */
+  font-weight: 600;
+  letter-spacing: 0.25vw;
+}
+
+/* Styles pour le lien dans le titre */
+section .title span a {
+  position: relative;
+  display: inline-block;
+  margin-left: 0.5rem;
+  text-decoration: none;
+  color: #f7ca18;
+}
+
+/* Styles pour l'animation du lien dans le titre */
+section .title span a::after {
+  content: "";
+  height: 2px;
+  background-color: #f7ca18;
+  position: absolute;
+  bottom: -10px;
+  left: 0;
+  width: 0;
+  animation: linkAfter 0.5s 1s ease both; /* Animation pour étendre la ligne sous le lien */
+}
+
+@-moz-keyframes pop {
+  0% {
+    transform: translateY(100%);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+@-webkit-keyframes pop {
+  0% {
+    transform: translateY(100%);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+@-o-keyframes pop {
+  0% {
+    transform: translateY(100%);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+@keyframes pop {
+  0% {
+    transform: translateY(100%);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+@-moz-keyframes byBottom {
+  0% {
+    transform: translateY(150%);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+@-webkit-keyframes byBottom {
+  0% {
+    transform: translateY(150%);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+@-o-keyframes byBottom {
+  0% {
+    transform: translateY(150%);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+@keyframes byBottom {
+  0% {
+    transform: translateY(150%);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+@-moz-keyframes linkAfter {
+  0% {
+    width: 0;
+  }
+  100% {
+    width: 30px;
+  }
+}
+
+@-webkit-keyframes linkAfter {
+  0% {
+    width: 0;
+  }
+  100% {
+    width: 30px;
+  }
+}
+
+@-o-keyframes linkAfter {
+  0% {
+    width: 0;
+  }
+  100% {
+    width: 30px;
+  }
+}
+
+@keyframes linkAfter {
+  0% {
+    width: 0;
+  }
+  100% {
+    width: 30px;
+  }
+}
+
+
+*{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+  }
+  
+  body {
+    background: #1b1b1b; /* Fond noir pour le corps de la page */
+    color: #fff; /* Texte blanc pour le corps de la page */
+  }
+  
+  .skills-section{
+  padding-top: 20px;
+  }
+  
+  .skills-header {
+    text-align: center;
+    color: #fff; /* Couleur du texte blanc pour le titre des compétences */
+    padding: 1rem;
+    position: relative;
+  }
+  
+  
+  .skills-header:after{
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100px;
+  height: 4px;
+  background-color: #f7ca18;
+  border-radius: 2px;
+  }
+  
+  .skills-container{
+  display: grid;
+  grid-tempLate-columns: repeat(5, 1fr);
+  justify-content:center;
+  align-items:center;
+  text-align: center;
+  grid-gap:1rem;
+  padding: 1rem 80px;
+  font-size: 1.2rem;
+  }
+  .skills-box {
+    padding: 1rem;
+    color: #fff; /* Couleur du texte blanc pour la description des compétences */
+    cursor: pointer;
+  }
+  .skills-box:hover .skills-img{
+  transform: translateX(-20px);
+  }
+  
+  .skills-title{
+  display:flex;
+  flex-direction: column;
+  align-items:center;
+  padding: 0.5rem;
+  margin-bottom: 0.5rem;
+  position: relative;
+  }
+  
+  .skills-title:after{
+  content: '';
+  position:absolute;
+  bottom: 0;
+  right: 50%;
+  width:20px;
+  height:4px;
+  border-radius: 2px 0 0 2px;
+  background-color: #f7ca18; /* couleur barre */
+  transition: .5s;
+  }
+  
+  .skills-title:before{
+  content: '';
+  position:absolute;
+  bottom: 0;
+  left: 35%;
+  width:100px;
+  height:4px;
+  border-radius: 0 2px 2px 0;
+  background-color: #f7ca18; /* couleur barre */
+  }
+  
+  .skills-icons{
+  width:50px;
+  z-index:2;
+  }
+  
+  .skills-img{
+  width:90px;
+  height:90px;
+  position: relative;
+  border-radius: 45px;
+  background-color: #fff;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  transition: .5s;
+  }
+  
+  .skills-img:after{
+  content: '';
+  position:absolute;
+  top:0;
+  left: 0;
+  width:50%;
+  height:90px;
+  background: rgba(100, 100, 100, 0.5);
+  border-radius: 45px 0 0 45px;
+  }
+  .skills-title h3{
+  color: #d8baba;
+  margin-top: 0.5rem;
+  }
+  @media screen and (max-width:990px){
+   .skills-container{
+   grid-tempLate-columns: repeat(2, 1fr);
+   padding: 2rem 50px;
+   }
+  }
+  
+  @media screen and (max-width:650px){
+   .skills-container{
+   grid-tempLate-columns:2fr;
+   padding: 2rem 50px;
+   }
+  }

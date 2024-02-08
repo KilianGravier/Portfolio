@@ -1,0 +1,239 @@
+/* Réinitialisation des styles par défaut */
+body {
+  font-size: 24px;
+  font-family: 'Roboto Condensed', sans-serif;
+  overflow: hidden;
+  min-height: 500px;
+  min-width: 300px;
+  background: #1e1e1e;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+
+
+/* Styles pour les titres h1 à h6 */
+h1, h2, h3, h4, h5, h6 {
+  text-align: center;
+  margin: 0 0 0.5em 0;
+}
+
+h1 {
+  font-size: 3em;
+  line-height: 1.4em;
+  letter-spacing: 2px;
+  text-shadow: 2px 2px 5px #000;
+}
+
+h2 {
+  font-size: 2.5em;
+  line-height: 1.1em;
+  font-weight: normal;
+}
+
+h3 {
+  font-size: 1.7em;
+  line-height: 1.2em;
+  font-weight: normal;
+}
+
+h4 {
+  font-size: 1.2em;
+  margin: 0;
+}
+
+
+/* Styles pour les liens */
+a {
+  color: #666;
+  text-decoration: none;
+  transition: all 0.5s;
+}
+
+a:hover {
+  color: #999;
+}
+
+/* Classe "hidden" pour masquer les éléments */
+.hidden {
+  display: none;
+}
+
+
+.slides-wrapper {
+  /* Styles pour le conteneur des diapositives */
+  -webkit-transform-style: preserve-3d; /* Utilise le rendu 3D pour les enfants de ce conteneur dans les navigateurs WebKit */
+  -webkit-perspective: 700px; /* Définit la perspective de la scène en 3D */
+  -webkit-perspective-origin: 50% 100px; /* Définit le point de perspective */
+  -webkit-transform: translateZ(0); /* Transforme en 3D en utilisant l'axe Z */
+  transform-style: preserve-3d; /* Utilise le rendu 3D pour les enfants de ce conteneur */
+  perspective: 700px; /* Définit la perspective de la scène en 3D */
+  perspective-origin: 50% 100px; /* Définit le point de perspective */
+  transform: translateZ(0); /* Transforme en 3D en utilisant l'axe Z */
+  position: absolute; /* Position absolue par rapport à son parent */
+  width: 40%; /* Largeur du conteneur des diapositives */
+  height: 40%; /* Hauteur du conteneur des diapositives */
+  top: 25%; /* Position du haut par rapport à son parent */
+  left: 30%; /* Position de gauche par rapport à son parent */
+  z-index: 2; /* Index de profondeur, détermine la superposition d'éléments */
+}
+
+.slide {
+  /* Styles pour chaque diapositive */
+  width: 100%; /* Largeur de la diapositive */
+  min-height: 100%; /* Hauteur minimale de la diapositive */
+  max-height: 120%; /* Hauteur maximale de la diapositive */
+  line-height: 1.5; /* Hauteur de ligne du texte */
+  position: absolute; /* Position absolue par rapport à son parent */
+  opacity: 0; /* Opacité initiale (invisible) */
+  font-size: 1em; /* Taille de police */
+  color: #eee; /* Couleur du texte */
+  left: 0; /* Position de gauche par rapport à son parent */
+  -webkit-transition: 0.7s all cubic-bezier(0.260, 0.860, 0.440, 0.985); /* Animation avec accélération */
+  transition: 0.7s all cubic-bezier(0.260, 0.860, 0.440, 0.985); /* Animation avec accélération */
+  -webkit-transform: translateZ(0); /* Transforme en 3D en utilisant l'axe Z */
+  transform: translateZ(0); /* Transforme en 3D en utilisant l'axe Z */
+  background: rgba(0,0,0,0.5); /* Couleur de fond semi-transparente */
+  border-radius: 3px; /* Rayon des coins arrondis */
+  box-shadow: 0 0 5px 2px rgba(10,10,10,0.5); /* Ombre portée */
+  box-sizing: border-box; /* La taille inclut les bordures et le padding */
+  padding: 5%; /* Espacement interne */
+  overflow: hidden; /* Cache le contenu qui dépasse */
+}
+
+.slide.current {
+  /* Styles pour la diapositive actuelle */
+  opacity: 1; /* La diapositive actuelle est visible */
+  -webkit-transform: translate3d(0, 0, 125px); /* Animation de translation en 3D */
+  transform: translate3d(0, 0, 125px); /* Animation de translation en 3D */
+}
+
+.slide.next {
+  /* Styles pour la diapositive suivante */
+  opacity: 0; /* La diapositive suivante est invisible */
+  -webkit-transform: rotateY(90deg) translate3d(-20%, 0, 155px); /* Animation de rotation en 3D */
+  -webkit-transform-origin: top left; /* Point d'origine de la rotation */
+  transform: rotateY(90deg) translate3d(0, 0, 125px); /* Animation de rotation en 3D */
+  transform-origin: top left; /* Point d'origine de la rotation */
+  left: 80%; /* Position de gauche par rapport à son parent */
+}
+
+.slide.prev {
+  /* Styles pour la diapositive précédente */
+  -webkit-transform: rotateY(-90deg) translate3d(20%, 0, 155px); /* Animation de rotation en 3D */
+  -webkit-transform-origin: top right; /* Point d'origine de la rotation */
+  transform: rotateY(-90deg) translate3d(0, 0, 125px); /* Animation de rotation en 3D */
+  transform-origin: top right; /* Point d'origine de la rotation */
+  opacity: 0; /* La diapositive précédente est invisible */
+  left: -80%; /* Position de gauche par rapport à son parent */
+}
+
+.slide ul, .slide ol {
+  /* Styles pour les listes non ordonnées et ordonnées dans les diapositives */
+  margin: 1em 0; /* Marge autour des listes */
+}
+
+.slide li {
+  /* Styles pour les éléments de liste */
+  list-style-position: inside; /* Position du marqueur de liste à l'intérieur de l'élément de liste */
+}
+
+.nav-button {
+  /* Styles pour les boutons de navigation */
+  position: fixed; /* Position fixe par rapport à la fenêtre du navigateur */
+  z-index: 10; /* Index de profondeur, détermine la superposition d'éléments */
+  min-width: 150px; /* Largeur minimale des boutons */
+  width: 5%; /* Largeur des boutons */
+  height: 100%; /* Hauteur des boutons */
+  border: none; /* Aucune bordure */
+  background-color: transparent; /* Fond transparent */
+  background-position: center; /* Position du fond au centre */
+  background-repeat: no-repeat; /* Pas de répétition du fond */
+  text-indent: -99999px; /* Texte décalé pour le rendre invisible */
+  cursor: pointer; /* Curseur de type "main" au survol */
+}
+
+.nav-button:focus {
+  /* Styles au focus (focus clavier) */
+  outline: none; /* Supprime l'encadré de focus */
+}
+
+.nav-button:hover {
+  /* Styles au survol */
+  background-color: rgba(0, 0, 0, 0.2); /* Fond légèrement teinté au survol */
+}
+
+.nav-button:active {
+  /* Styles au clic */
+  background-color: rgba(20, 20, 20, 0.3); /* Fond légèrement plus foncé au clic */
+}
+
+.nav-button.prev {
+  /* Styles pour le bouton précédent */
+  background-image: url(https://i.imgur.com/y6ZypnW.png?1?5201); /* Image du bouton précédent */
+  left: 0; /* Position de gauche par rapport à son parent */
+}
+
+.nav-button.next {
+  /* Styles pour le bouton suivant */
+  background-image: url(https://i.imgur.com/dH1KsfM.png?1); /* Image du bouton suivant */
+  right: 0; /* Position de droite par rapport à son parent */
+}
+
+@media all and (max-width: 1280px) {
+  /* Styles pour les écrans jusqu'à 1280px de largeur */
+  body {
+    font-size: 14px; /* Réduction de la taille de police */
+  }
+  .nav-button {
+    background-size: 60%; /* Réduction de la taille de l'image de fond */
+    min-width: 100px; /* Largeur minimale des boutons */
+  }
+}
+
+@media all and (max-width: 1500px) {
+  /* Styles pour les écrans jusqu'à 1500px de largeur */
+  body {
+    font-size: 22px; /* Augmentation de la taille de police */
+  }
+}
+
+
+@media all and (max-width: 900px) {
+  /* Styles pour les écrans jusqu'à 900px de largeur */
+  body {
+    font-size: 16px; /* Réduction de la taille de police */
+  }
+}
+
+@media all and (max-width: 750px) {
+  /* Styles pour les écrans jusqu'à 750px de largeur */
+  .nav-button {
+    width: 100%; /* Largeur des boutons à 100% de la largeur de la fenêtre */
+    height: 50px; /* Hauteur des boutons à 50px */
+    background-size: contain; /* Taille du fond pour contenir l'image entière */
+  }
+  .nav-button.prev {
+    bottom: 0; /* Position en bas par rapport à son parent */
+  }
+  .nav-button.next {
+    top: 0; /* Position en haut par rapport à son parent */
+  }
+  #slideShow {
+    width: 70%; /* Largeur de l'élément avec l'ID "slideShow" à 70% de la largeur de la fenêtre */
+    left: 15%; /* Position de gauche par rapport à son parent */
+  }
+}
+
+
+
+
+@media all and (max-width: 1024px) {
+  /* Styles pour les écrans jusqu'à 1024px de largeur */
+  body {
+    font-size: 18px; /* Réduction de la taille de police */
+  }
+
+  
+}
+

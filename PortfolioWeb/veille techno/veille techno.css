@@ -1,0 +1,548 @@
+/* Styles pour le corps de la page */
+body {
+  font-family: 'Open Sans', sans-serif;
+  background-image: url("https://cdn.arstechnica.net/wp-content/uploads/2019/05/GettyImages-843466180.png");
+}
+
+/* Styles pour les titres de niveau 1 (h1) */
+h1 {
+  text-align: center;
+  font-family: Montserrat, sans-serif;
+  color: #26efb9;
+}
+
+/* Styles pour la classe "accordion" */
+.accordion {
+  width: 100%;
+  max-width: 1080px;
+  height: 250px;
+  overflow: hidden;
+  margin: 50px auto;
+  background-color: transparent;
+}
+
+/* Styles pour la liste non ordonnée à l'intérieur de la classe "accordion" */
+.accordion ul {
+  width: 100%;
+  display: table;
+  table-layout: fixed;
+  margin: 0;
+  padding: 0;
+}
+
+/* Styles pour les éléments de liste à l'intérieur de la classe "accordion" */
+.accordion ul li {
+  display: table-cell;
+  vertical-align: bottom;
+  position: relative;
+  width: 16.666%;
+  height: 250px;
+  background-repeat: no-repeat;
+  background-position: center center;
+  transition: all 500ms ease;
+  clip-path: polygon(75% 0%, 100% 50%, 75% 100%, 0% 100%, 25% 50%, 0% 0%);
+}
+
+/* Styles pour les contenus à l'intérieur des éléments de liste */
+.accordion ul li div {
+  display: block;
+  overflow: hidden;
+  width: 100%;
+}
+
+/* Styles pour les boutons à l'intérieur des éléments de liste */
+.accordion ul li div .btn {
+  display: block;
+  height: 250px;
+  width: 100%;
+  position: relative;
+  z-index: 3;
+  padding: 10px 40px;
+  box-sizing: border-box;
+  color: #fff;
+  text-decoration: none;
+  font-family: Open Sans, sans-serif;
+  transition: all 200ms ease;
+  background: rgba(38, 239, 185, 0.3);
+}
+
+/* Styles pour le dernier élément de la liste */
+.accordion ul li:last-child .btn {
+  border-right: 0;
+}
+
+/* Styles pour les numéros à l'intérieur des boutons */
+.number {
+  text-align: center;
+  margin: 0;
+  position: relative;
+  top: 50%;
+  left: 70%;
+  transform: translate(-50%, -50%);
+  color: #26efb9;
+  font-size: 20px;
+  background-color: black;
+  line-height: 40px;
+  width: 40px!important;
+  height: 40px;
+  border-radius: 50%;
+  display: inline-block;
+  border: solid 2px #26efb9;
+}
+
+/* Styles pour les contenus des boutons */
+.accordion ul li div .btn .content {
+  opacity: 0;
+  margin: 0;
+  width: 100%;
+  text-overflow: ellipsis;
+  position: relative;
+  z-index: 5;
+  white-space: nowrap;
+  overflow: hidden;
+  -webkit-transform: translateX(-20px);
+  transform: translateX(-20px);
+  -webkit-transition: all 400ms ease;
+  transition: all 400ms ease;
+}
+
+/* Styles pour les titres (h2) à l'intérieur des boutons */
+.accordion ul li div .btn h2 {
+  text-overflow: clip;
+  font-size: 24px;
+  text-transform: uppercase;
+  margin-bottom: 2px;
+  color: #000;
+}
+
+/* Styles pour les paragraphes (p) à l'intérieur des boutons */
+.accordion ul li div .btn p {
+  font-size: 13.5px;
+  color: #000;
+}
+
+/* Styles pour les liens (a) à l'intérieur des boutons */
+.accordion ul li div .btn a {
+  font-size: 13.5px;
+  background-color: #000;
+  padding: 10px 20px;
+  border-radius: 5px;
+  text-decoration: none;
+  color: #3AEFB9;
+  display: inline-block;
+  margin-top: 10px;
+  font-weight: 600;
+}
+
+/* Styles pour les liens au survol */
+.accordion ul li div .btn a:hover {
+  background-color: #3AEFB9;
+  color: #000;
+}
+
+/* Styles pour les différents arrière-plans des éléments de la liste */
+.accordion ul li:nth-child(1) {
+  background-image: url("https://www.jasonmpittman.com/wp-content/uploads/2019/03/comp-sci.jpg");
+}
+
+.accordion ul li:nth-child(2) {
+  background-image: url("https://i2.wp.com/blog.logsign.com/wp-content/uploads/2019/12/IT-security-vs-Cyber-Security.png?fit=772%2C386&ssl=1");
+}
+
+.accordion ul li:nth-child(3) {
+  background-image: url("https://www.iisecurity.in/images/courses/chfi.jpg");
+}
+
+.accordion ul li:nth-child(4) {
+  background-image: url("https://cdn-media-1.freecodecamp.org/images/ghF0kB011QpDd5vWRlaUjD1H0NxV6dLsKfjf");
+}
+
+.accordion ul li:nth-child(5) {
+  background-image: url("https://adoptostaging.blob.core.windows.net/media/python-developer-job-description-template-76fG8u.jpg");
+}
+
+.accordion ul li:nth-child(6) {
+  background-image: url("https://www.rse.org.uk/wp-content/uploads/2019/06/Brain-Image_201900607.jpeg");
+}
+
+.accordion ul li:nth-child(7) {
+  background-image: url("https://al.nd.edu/assets/380450/1000x562/bacs_code.jpg");
+}
+
+/* Styles pour la liste déroulante au survol des éléments de la liste */
+.accordion ul:hover li,
+.accordion ul:focus-within li {
+  width: 8%;
+  border-right: solid 2px #252525;
+  clip-path: polygon(93% 0, 100% 50%, 90% 100%, 0% 100%, 0 50%, 0% 0);
+}
+
+/* Styles pour l'élément actif */
+.accordion ul li:focus {
+  outline: none;
+}
+
+/* Styles pour la liste déroulante au survol des éléments de la liste et pour l'élément actif */
+.accordion ul:hover li:hover,
+.accordion ul li:focus,
+.accordion ul:focus-within li:focus {
+  width: 60%;
+  border-right: 0;
+  clip-path: polygon(90% 0, 100% 50%, 90% 100%, 0% 100%, 0 50%, 0% 0);
+}
+
+/* Styles pour les boutons au survol des éléments de la liste */
+.accordion ul:hover li:hover .btn,
+.accordion ul li:focus a,
+.accordion ul:focus-within li:focus a {
+  background: rgba(255, 255, 255, 0.8);  
+}
+
+/* Styles pour les contenus au survol des éléments de la liste */
+.accordion ul:hover li:hover .btn .content,
+.accordion ul li:focus .btn .content,
+.accordion ul:focus-within li:focus div.btn .content {
+  opacity: 1;
+  -webkit-transform: translateX(0);
+  transform: translateX(0);
+}
+
+/* Styles pour les éléments de liste au survol */
+.accordion ul:hover li {
+  width: 8% !important;
+  clip-path: inset(0 0 0 0);
+}
+
+/* Styles pour les contenus et les numéros au survol des éléments de liste */
+.accordion ul:hover li .btn .content,
+.accordion ul:hover li .btn .number {
+  opacity: 0 !important;
+}
+
+/* Styles pour les éléments de liste au survol et pour les boutons */
+.accordion ul:hover li:hover {
+  width: 60% !important;
+}
+
+/* Styles pour les boutons au survol */
+.accordion ul:hover li:hover .btn {
+  background: rgba(255, 255, 255, 0.7);
+}
+
+/* Styles pour les contenus au survol des éléments de liste */
+.accordion ul:hover li:hover .btn .content {
+  opacity: 1 !important;
+  -webkit-transform: translateX(0);
+  transform: translateX(0);
+}
+
+/* Styles pour l'élément fancybox */
+.fancybox-content {
+  width: 650px;
+}
+
+/* Styles pour les écrans de petite taille (maximum 600px de largeur) */
+@media screen and (max-width: 600px) {
+  body {
+    margin: 0;
+  }
+
+  .accordion {
+    height: auto;
+  }
+  
+  .accordion ul li, .accordion ul li:hover, .accordion ul:hover li, .accordion ul:hover li:hover {
+    position: relative;
+    display: table;
+    table-layout: fixed;
+    width: 100%;
+    -webkit-transition: none;
+    transition: none;
+  }
+}
+
+
+/* Styles pour les liens */
+a {
+    color: inherit;
+    text-decoration: inherit;
+  }
+  
+  /* Styles pour le corps de la page */
+  body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Open Sans', sans-serif;
+  }
+  
+  /* Styles pour la sélection de texte */
+  ::selection {
+    background-color: #f7ca18;
+    color: #1b1b1b;
+  }
+  
+  /* Styles pour la barre de navigation en bas de la page */
+  nav {
+    width: 100%;
+    background-color: #0b0b0b;
+    position: fixed;
+    bottom: 0;
+    height: 100px;
+    overflow: hidden;
+  }
+  
+  /* Styles pour la liste non ordonnée dans la barre de navigation */
+  nav ul {
+    position: absolute;
+    top: 0;
+    left: 0;
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    width: 140vw;
+  }
+  
+  /* Styles pour les éléments de la liste dans la barre de navigation */
+  nav li {
+    margin: 0;
+    display: inline-block;
+    height: 98px;
+    margin-bottom: 2px;
+    line-height: 100px;
+    width: 20vw;
+    text-align: center;
+    color: #555;
+    transition: background-color 0.5s 0.2s ease, color 0.3s ease;
+    cursor: pointer;
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    font-weight: 800;
+    transform: translateY(100%);
+  }
+  
+  /* Styles pour les éléments actifs dans la barre de navigation */
+  nav li.active {
+    background-color: #151515;
+    color: #efefef;
+  }
+  
+  /* Styles pour la ligne sous les éléments actifs dans la barre de navigation */
+  nav li.active::after {
+    content: "";
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background-color: #f7ca18;
+  }
+  
+  /* Styles pour l'animation d'apparition des éléments de la barre de navigation */
+  nav li:nth-child(1) {
+    animation: pop 0.5s 0.15s 1 forwards;
+  }
+  nav li:nth-child(2) {
+    animation: pop 0.5s 0.3s 1 forwards;
+  }
+  nav li:nth-child(3) {
+    animation: pop 0.5s 0.45s 1 forwards;
+  }
+  nav li:nth-child(4) {
+    animation: pop 0.5s 0.6s 1 forwards;
+  }
+  nav li:nth-child(5) {
+    animation: pop 0.5s 0.75s 1 forwards;
+  }
+  nav li:nth-child(6) {
+    animation: pop 0.5s 0.9s 1 forwards;
+  }
+  nav li:nth-child(7) {
+    animation: pop 0.5s 1.05s 1 forwards;
+  }
+  
+  /* Styles pour la couleur au survol des éléments de la barre de navigation */
+  nav li:hover {
+    color: #ececec;
+  }
+  
+  /* Styles pour l'élément actif au clic dans la barre de navigation */
+  nav li:active {
+    background-color: #222;
+  }
+  
+  /* Styles pour l'animation de la ligne de défilement dans la barre de navigation */
+  nav li:nth-child(1):hover ~ .slide {
+    left: 0;
+  }
+  nav li:nth-child(2):hover ~ .slide {
+    left: 20vw;
+  }
+  nav li:nth-child(3):hover ~ .slide {
+    left: 40vw;
+  }
+  nav li:nth-child(4):hover ~ .slide {
+    left: 60vw;
+  }
+  nav li:nth-child(5):hover ~ .slide {
+    left: 80vw;
+  }
+  nav li:nth-child(6):hover ~ .slide {
+    left: 100vw;
+  }
+  nav li:nth-child(7):hover ~ .slide {
+    left: 120vw;
+  }
+  nav li.slide {
+    position: absolute;
+    left: -20vw;
+    top: 0;
+    background-color: #fff;
+    z-index: -1;
+    height: 2px;
+    margin-top: 98px;
+    transition: left 0.3s ease;
+    transform: translateY(0);
+  }
+  section {
+    background-color: #1b1b1b;
+    height: 100vh;
+    display: flex;
+  }
+  section .title {
+    max-width: 60%;
+    width: 100%;
+    align-self: center;
+    transform: translateY(-50px);
+    margin: 0 auto;
+    overflow: hidden;
+    padding-bottom: 10px;
+  }
+  section .title span {
+    display: inline-block;
+    font-size: 5vw;
+    color: #efefef;
+    width: 100%;
+    text-transform: uppercase;
+    transform: translateX(-100%);
+    animation: byBottom 1s ease both;
+    font-weight: 600;
+    letter-spacing: 0.25vw;
+  }
+  section .title span:last-child {
+    font-size: 1rem;
+    animation: byBottom 1s 0.25s ease both;
+  }
+  section .title span a {
+    position: relative;
+    display: inline-block;
+    margin-left: 0.5rem;
+    text-decoration: none;
+    color: #f7ca18;
+  }
+  section .title span a::after {
+    content: "";
+    height: 2px;
+    background-color: #f7ca18;
+    position: absolute;
+    bottom: -10px;
+    left: 0;
+    width: 0;
+    animation: linkAfter 0.5s 1s ease both;
+  }
+  @-moz-keyframes pop {
+    0% {
+      transform: translateY(100%);
+    }
+    100% {
+      transform: translateY(0);
+    }
+  }
+  @-webkit-keyframes pop {
+    0% {
+      transform: translateY(100%);
+    }
+    100% {
+      transform: translateY(0);
+    }
+  }
+  @-o-keyframes pop {
+    0% {
+      transform: translateY(100%);
+    }
+    100% {
+      transform: translateY(0);
+    }
+  }
+  @keyframes pop {
+    0% {
+      transform: translateY(100%);
+    }
+    100% {
+      transform: translateY(0);
+    }
+  }
+  @-moz-keyframes byBottom {
+    0% {
+      transform: translateY(150%);
+    }
+    100% {
+      transform: translateY(0);
+    }
+  }
+  @-webkit-keyframes byBottom {
+    0% {
+      transform: translateY(150%);
+    }
+    100% {
+      transform: translateY(0);
+    }
+  }
+  @-o-keyframes byBottom {
+    0% {
+      transform: translateY(150%);
+    }
+    100% {
+      transform: translateY(0);
+    }
+  }
+  @keyframes byBottom {
+    0% {
+      transform: translateY(150%);
+    }
+    100% {
+      transform: translateY(0);
+    }
+  }
+  @-moz-keyframes linkAfter {
+    0% {
+      width: 0;
+    }
+    100% {
+      width: 30px;
+    }
+  }
+  @-webkit-keyframes linkAfter {
+    0% {
+      width: 0;
+    }
+    100% {
+      width: 30px;
+    }
+  }
+  @-o-keyframes linkAfter {
+    0% {
+      width: 0;
+    }
+    100% {
+      width: 30px;
+    }
+  }
+  @keyframes linkAfter {
+    0% {
+      width: 0;
+    }
+    100% {
+      width: 30px;
+    }
+  }
